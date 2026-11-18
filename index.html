@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personal Google Drive Backup (rclone)</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem;
+         font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+  h1 { font-size: 1.7rem; line-height: 1.25; margin-bottom: .35rem; }
+  h2 { font-size: 1.1rem; margin-top: 2rem; }
+  .sub { opacity: .7; margin-top: 0; }
+  ul { padding-left: 1.2rem; }
+  code { font-size: .9em; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #8884; font-size: .9rem; opacity: .8; }
+  a { color: #2563eb; }
+  @media (prefers-color-scheme: dark) { a { color: #7aa7ff; } }
+</style>
+</head>
+<body>
+<p class="sub">Personal, non-commercial project</p>
+<h1>Personal Google Drive Backup (rclone)</h1>
+
+<p>
+  This page is the application home page for a private OAuth client used by a single
+  person, the project owner, to back up files from his own computer to his own Google Drive
+  using <a href="https://rclone.org/">rclone</a>, an open-source command line tool.
+</p>
+
+<h2>What the application does</h2>
+<ul>
+  <li>Runs locally on the owner's Windows computer. There is no server, no web dashboard and no user accounts.</li>
+  <li>Uploads a small set of configuration files (editor settings, agent instructions, one JSON backup) to a single folder in the owner's own Google Drive.</li>
+  <li>Lists and removes old backup files in that same folder, so that only the newest backup is kept.</li>
+</ul>
+
+<h2>Who uses it</h2>
+<p>
+  One person only &mdash; the owner of the Google account that grants access. The client is not
+  distributed, not published to any app store, and has no other users. Access is granted through
+  Google's OAuth consent screen and can be revoked at any time at
+  <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
+</p>
+
+<h2>Data and privacy</h2>
+<p>
+  The client reads and writes only the files it created in the folder the owner chooses.
+  It does not read, collect, or transmit the owner's other Drive content, and it sends nothing
+  to third parties. Full details are in the
+  <a href="./privacy.html">Privacy Policy</a>.
+</p>
+
+<footer>
+  <p>
+    <a href="./privacy.html">Privacy Policy</a> &middot;
+    Contact: <a href="mailto:arvib@fazriansyah.eu.org">arvib@fazriansyah.eu.org</a>
+  </p>
+  <p>Not affiliated with, endorsed by, or sponsored by Google LLC. Google Drive is a trademark of Google LLC.</p>
+</footer>
+</body>
+</html>
