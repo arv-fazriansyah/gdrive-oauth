@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Google Drive Backup">
+  <rect width="32" height="32" rx="8" fill="#006cac"/>
+  <path d="M10.5 21.5a4.5 4.5 0 0 1 .7-8.95A6 6 0 0 1 22.4 13a4.25 4.25 0 0 1 .6 8.5" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  <path d="M16 24.5v-7.5m0 0-3.25 3.25M16 17l3.25 3.25" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

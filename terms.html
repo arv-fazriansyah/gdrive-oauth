@@ -1,92 +1,168 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Terms of Service &mdash; Personal Google Drive Backup (rclone)</title>
-<style>
-  :root { color-scheme: light dark; }
-  body { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem;
-         font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
-  h1 { font-size: 1.6rem; line-height: 1.25; }
-  h2 { font-size: 1.05rem; margin-top: 2rem; }
-  ul { padding-left: 1.2rem; }
-  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #8884; font-size: .9rem; opacity: .8; }
-  a { color: #2563eb; }
-  @media (prefers-color-scheme: dark) { a { color: #7aa7ff; } }
-</style>
+<title>Ketentuan Layanan &mdash; Google Drive Backup</title>
+<meta name="description" content="Ketentuan layanan klien OAuth 2.0 yang dapat dipakai aplikasi mana pun untuk mencadangkan file ke Google Drive milik pengguna sendiri.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fdfdfd">
+<link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+<script>
+  (function () {
+    try {
+      var theme = localStorage.getItem("theme");
+      if (!theme) {
+        theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+      }
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (error) {}
+  })();
+</script>
+<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-<p><a href="./index.html">&larr; Home</a></p>
-<h1>Terms of Service</h1>
-<p><strong>Last updated:</strong> 18 November 2026</p>
+<a class="skip-link" href="#main-content">Lewati ke konten</a>
 
-<p>
-  These terms govern the use of the private OAuth client and the small command line tool
-  behind the project &ldquo;Personal Google Drive Backup (rclone)&rdquo; (the &ldquo;Software&rdquo;).
-  The Software is operated by one individual for his own personal use on his own computer.
-</p>
+<header class="app-layout">
+  <div class="header-inner">
+    <a class="site-title" href="./index.html">Google Drive Backup</a>
+    <nav aria-label="Navigasi utama">
+      <ul class="nav-list">
+        <li><a href="./index.html">Beranda</a></li>
+        <li><a href="./privacy.html">Privasi</a></li>
+        <li><a href="./terms.html" aria-current="page">Ketentuan</a></li>
+        <li>
+          <button id="theme-btn" class="theme-btn" type="button" aria-label="Ganti tema">
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+            </svg>
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" />
+              <path d="M6.343 17.657l-1.414 1.414" />
+              <path d="M6.343 6.343l-1.414 -1.414" />
+              <path d="M17.657 6.343l1.414 -1.414" />
+              <path d="M17.657 17.657l1.414 1.414" />
+              <path d="M4 12h-2" />
+              <path d="M12 4v-2" />
+              <path d="M20 12h2" />
+              <path d="M12 20v2" />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-<h2>1. Scope of use</h2>
-<ul>
-  <li>The Software is provided for the personal, non-commercial use of its owner only. It is not offered as a service to the public.</li>
-  <li>There is no user registration, no account system, and no support commitment.</li>
-  <li>The Software is not distributed, licensed, or resold to third parties.</li>
-</ul>
+<main id="main-content" class="app-layout">
+  <section class="hero">
+    <p class="eyebrow">Google Drive Backup</p>
+    <h1>Ketentuan Layanan</h1>
+    <p class="meta">Terakhir diperbarui: <strong>19 November 2026</strong></p>
+  </section>
 
-<h2>2. Your responsibilities</h2>
-<ul>
-  <li>You must authorise the Software only for a Google account you own or are permitted to manage.</li>
-  <li>You are responsible for the files you choose to back up and for keeping your own copies.</li>
-  <li>You must comply with the Google APIs Terms of Service and the Google Drive terms that apply to your account.</li>
-  <li>You may revoke the Software's access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
-</ul>
+  <section class="section">
+    <p>
+      Ketentuan ini mengatur penggunaan klien OAuth 2.0 &ldquo;Google Drive Backup&rdquo;
+      (&ldquo;klien OAuth&rdquo;). Dengan memberi otorisasi kepada, menjalankan, atau menggunakan
+      klien OAuth ini, Anda menyetujui ketentuan di halaman ini.
+    </p>
+  </section>
 
-<h2>3. No warranty</h2>
-<p>
-  The Software is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo;, without warranty of any kind,
-  express or implied, including but not limited to the warranties of merchantability, fitness for a
-  particular purpose, and non-infringement. Backup is not a substitute for keeping independent copies:
-  no guarantee is given that any file will be uploaded, retained, or restorable.
-</p>
+  <section class="section">
+    <h2>1. Ruang lingkup penggunaan</h2>
+    <ul>
+      <li>Klien OAuth tersedia untuk siapa saja yang ingin mencadangkan file ke akun Google Drive miliknya sendiri.</li>
+      <li>Klien OAuth tidak terikat pada satu aplikasi tertentu: aplikasi desktop, alat baris perintah, maupun layanan lain yang mendukung OAuth 2.0 dapat memakainya.</li>
+      <li>Klien OAuth tidak ditawarkan sebagai layanan terkelola. Tidak ada pendaftaran, sistem akun, maupun komitmen dukungan.</li>
+      <li>Anda tidak boleh menjual kembali klien OAuth ini sebagai layanan berlangganan milik Anda sendiri.</li>
+    </ul>
+  </section>
 
-<h2>4. Limitation of liability</h2>
-<p>
-  To the maximum extent permitted by applicable law, the author is not liable for any indirect,
-  incidental, special, consequential, or punitive damages, or for any loss of data, profits, or
-  goodwill, arising out of or related to the use of or inability to use the Software.
-</p>
+  <section class="section">
+    <h2>2. Tanggung jawab pengguna</h2>
+    <ul>
+      <li>Anda hanya boleh memberi otorisasi pada akun Google yang Anda miliki atau yang boleh Anda kelola.</li>
+      <li>Anda bertanggung jawab atas aplikasi klien yang Anda pakai serta file yang dipilih untuk dicadangkan, dan tetap menyimpan salinan mandiri.</li>
+      <li>Anda wajib mematuhi Google APIs Terms of Service dan ketentuan Google Drive yang berlaku pada akun Anda.</li>
+      <li>Anda dapat mencabut akses klien OAuth kapan saja di <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+    </ul>
+  </section>
 
-<h2>5. Third-party services</h2>
-<p>
-  The Software connects to Google Drive through Google's APIs. Google is not a party to these terms
-  and provides its services under its own agreements. The Software is not affiliated with, endorsed by,
-  or sponsored by Google LLC. Google Drive is a trademark of Google LLC.
-</p>
+  <section class="section">
+    <h2>3. Tanpa jaminan</h2>
+    <p>
+      Klien OAuth dan aplikasi klien yang memakainya disediakan &ldquo;sebagaimana adanya&rdquo; dan
+      &ldquo;sebagaimana tersedia&rdquo;, tanpa jaminan apa pun, baik tersurat maupun tersirat, termasuk
+      namun tidak terbatas pada jaminan kelayakan untuk diperdagangkan, kesesuaian untuk tujuan tertentu,
+      dan tidak adanya pelanggaran hak. Pencadangan bukan pengganti salinan mandiri: tidak ada jaminan
+      bahwa suatu file akan terunggah, tersimpan, atau dapat dipulihkan.
+    </p>
+  </section>
 
-<h2>6. Changes and termination</h2>
-<p>
-  The Software may be modified, suspended, or discontinued at any time without notice. Updated terms
-  will be published on this page with a new &ldquo;last updated&rdquo; date; continued use after a change
-  constitutes acceptance of the revised terms.
-</p>
+  <section class="section">
+    <h2>4. Batasan tanggung jawab</h2>
+    <p>
+      Sejauh diizinkan oleh hukum yang berlaku, penulis tidak bertanggung jawab atas kerugian tidak
+      langsung, insidental, khusus, konsekuensial, maupun punitif, atau atas kehilangan data, keuntungan,
+      atau reputasi, yang timbul dari atau berkaitan dengan penggunaan atau ketidakmampuan menggunakan
+      klien OAuth ini.
+    </p>
+  </section>
 
-<h2>7. Governing law</h2>
-<p>
-  These terms are governed by the laws of the Republic of Indonesia, without regard to conflict of law rules.
-</p>
+  <section class="section">
+    <h2>5. Layanan pihak ketiga</h2>
+    <p>
+      Klien OAuth terhubung ke Google Drive melalui API Google. Google bukan pihak dalam ketentuan
+      ini dan menyediakan layanannya berdasarkan perjanjiannya sendiri. Klien OAuth ini tidak
+      berafiliasi dengan, tidak didukung, dan tidak disponsori oleh Google LLC. Google Drive adalah
+      merek dagang Google LLC.
+    </p>
+  </section>
 
-<h2>8. Contact</h2>
-<p>
-  Questions about these terms: <a href="mailto:arvib@fazriansyah.eu.org">arvib@fazriansyah.eu.org</a>
-</p>
+  <section class="section">
+    <h2>6. Perubahan dan penghentian</h2>
+    <p>
+      Klien OAuth dapat diubah, dihentikan sementara, atau dihentikan permanen kapan saja tanpa
+      pemberitahuan. Ketentuan terbaru akan diterbitkan di halaman ini dengan tanggal
+      &ldquo;terakhir diperbarui&rdquo; yang baru; penggunaan setelah perubahan berarti menyetujui
+      ketentuan yang telah diperbarui.
+    </p>
+  </section>
 
-<footer>
-  <p>
-    <a href="./privacy.html">Privacy Policy</a> &middot;
-    <a href="./index.html">Home</a> &middot;
-    Contact: <a href="mailto:arvib@fazriansyah.eu.org">arvib@fazriansyah.eu.org</a>
-  </p>
+  <section class="section">
+    <h2>7. Hukum yang berlaku</h2>
+    <p>
+      Ketentuan ini diatur oleh hukum Republik Indonesia, tanpa memperhatikan kaidah pertentangan hukum.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>8. Kontak</h2>
+    <p>
+      Pertanyaan tentang ketentuan ini:
+      <a href="mailto:arvib@fazriansyah.eu.org">arvib@fazriansyah.eu.org</a>
+    </p>
+  </section>
+</main>
+
+<footer class="app-layout">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="./index.html">Beranda</a></li>
+      <li><a href="./privacy.html">Kebijakan Privasi</a></li>
+      <li><a href="mailto:arvib@fazriansyah.eu.org">Kontak</a></li>
+    </ul>
+    <p>
+      Tidak berafiliasi dengan, tidak didukung, dan tidak disponsori oleh Google LLC.
+      Google Drive adalah merek dagang Google LLC.
+    </p>
+  </div>
 </footer>
+
+<script src="./assets/theme.js" defer></script>
 </body>
 </html>

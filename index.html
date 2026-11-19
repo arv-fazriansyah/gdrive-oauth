@@ -1,63 +1,166 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Personal Google Drive Backup (rclone)</title>
-<style>
-  :root { color-scheme: light dark; }
-  body { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem;
-         font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
-  h1 { font-size: 1.7rem; line-height: 1.25; margin-bottom: .35rem; }
-  h2 { font-size: 1.1rem; margin-top: 2rem; }
-  .sub { opacity: .7; margin-top: 0; }
-  ul { padding-left: 1.2rem; }
-  code { font-size: .9em; }
-  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #8884; font-size: .9rem; opacity: .8; }
-  a { color: #2563eb; }
-  @media (prefers-color-scheme: dark) { a { color: #7aa7ff; } }
-</style>
+<title>Google Drive Backup</title>
+<meta name="description" content="Halaman utama klien OAuth 2.0 yang dapat dipakai aplikasi mana pun untuk mencadangkan file ke Google Drive milik pengguna sendiri.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fdfdfd">
+<link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+<script>
+  (function () {
+    try {
+      var theme = localStorage.getItem("theme");
+      if (!theme) {
+        theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+      }
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (error) {}
+  })();
+</script>
+<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-<p class="sub">Personal, non-commercial project</p>
-<h1>Personal Google Drive Backup (rclone)</h1>
+<a class="skip-link" href="#main-content">Lewati ke konten</a>
 
-<p>
-  This page is the application home page for a private OAuth client used by a single
-  person, the project owner, to back up files from his own computer to his own Google Drive
-  using <a href="https://rclone.org/">rclone</a>, an open-source command line tool.
-</p>
+<header class="app-layout">
+  <div class="header-inner">
+    <a class="site-title" href="./index.html">Google Drive Backup</a>
+    <nav aria-label="Navigasi utama">
+      <ul class="nav-list">
+        <li><a href="./index.html" aria-current="page">Beranda</a></li>
+        <li><a href="./privacy.html">Privasi</a></li>
+        <li><a href="./terms.html">Ketentuan</a></li>
+        <li>
+          <button id="theme-btn" class="theme-btn" type="button" aria-label="Ganti tema">
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+            </svg>
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" />
+              <path d="M6.343 17.657l-1.414 1.414" />
+              <path d="M6.343 6.343l-1.414 -1.414" />
+              <path d="M17.657 6.343l1.414 -1.414" />
+              <path d="M17.657 17.657l1.414 1.414" />
+              <path d="M4 12h-2" />
+              <path d="M12 4v-2" />
+              <path d="M20 12h2" />
+              <path d="M12 20v2" />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-<h2>What the application does</h2>
-<ul>
-  <li>Runs locally on the owner's Windows computer. There is no server, no web dashboard and no user accounts.</li>
-  <li>Uploads a small set of configuration files (editor settings, agent instructions, one JSON backup) to a single folder in the owner's own Google Drive.</li>
-  <li>Lists and removes old backup files in that same folder, so that only the newest backup is kept.</li>
-</ul>
+<main id="main-content" class="app-layout">
+  <section class="hero">
+    <p class="eyebrow">Untuk siapa saja</p>
+    <h1>Google Drive Backup</h1>
+    <p class="lede">
+      Klien OAuth 2.0 untuk mencadangkan file dari aplikasi klien mana pun ke Google Drive
+      milik pengguna sendiri. Tidak terikat pada satu aplikasi atau satu alat tertentu.
+    </p>
+    <p class="meta">Berjalan lokal &middot; Tanpa server &middot; Tanpa akun tambahan</p>
+  </section>
 
-<h2>Who uses it</h2>
-<p>
-  One person only &mdash; the owner of the Google account that grants access. The client is not
-  distributed, not published to any app store, and has no other users. Access is granted through
-  Google's OAuth consent screen and can be revoked at any time at
-  <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
-</p>
+  <section class="section">
+    <h2>Apa yang dilakukan aplikasi</h2>
+    <ul>
+      <li>Berjalan lokal di perangkat pengguna melalui aplikasi klien yang dipakai. Tidak ada server aplikasi, dasbor web, atau sistem akun tambahan.</li>
+      <li>Memberi otorisasi OAuth 2.0 agar aplikasi klien dapat mengunggah file ke satu folder khusus di Google Drive pengguna.</li>
+      <li>Memungkinkan aplikasi klien menampilkan daftar, mengunduh, dan menghapus file cadangan lama di folder tersebut, sehingga hanya cadangan terbaru yang disimpan.</li>
+    </ul>
+  </section>
 
-<h2>Data and privacy</h2>
-<p>
-  The client reads and writes only the files it created in the folder the owner chooses.
-  It does not read, collect, or transmit the owner's other Drive content, and it sends nothing
-  to third parties. Full details are in the
-  <a href="./privacy.html">Privacy Policy</a>.
-</p>
+  <section class="section">
+    <h2>Ringkasan</h2>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr>
+            <th scope="row">Jenis aplikasi</th>
+            <td>Klien OAuth 2.0 untuk pencadangan file ke Google Drive</td>
+          </tr>
+          <tr>
+            <th scope="row">Pengguna</th>
+            <td>Siapa saja yang memberi otorisasi melalui aplikasi klien pilihannya</td>
+          </tr>
+          <tr>
+            <th scope="row">Integrasi</th>
+            <td>Aplikasi apa pun yang mendukung OAuth 2.0: desktop, CLI, atau layanan lain</td>
+          </tr>
+          <tr>
+            <th scope="row">Platform</th>
+            <td>Berjalan di perangkat pengguna melalui aplikasi klien. Tanpa server aplikasi dan tanpa dasbor</td>
+          </tr>
+          <tr>
+            <th scope="row">Data yang disimpan</th>
+            <td>File cadangan di folder Google Drive pengguna; token OAuth di perangkat pengguna</td>
+          </tr>
+          <tr>
+            <th scope="row">Pembagian data</th>
+            <td>Tidak ada. Tanpa analytics, pelacak, atau layanan iklan</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-<footer>
-  <p>
-    <a href="./privacy.html">Privacy Policy</a> &middot;
-    <a href="./terms.html">Terms of Service</a> &middot;
-    Contact: <a href="mailto:arvib@fazriansyah.eu.org">arvib@fazriansyah.eu.org</a>
-  </p>
-  <p>Not affiliated with, endorsed by, or sponsored by Google LLC. Google Drive is a trademark of Google LLC.</p>
+  <section class="section">
+    <h2>Siapa yang dapat menggunakannya</h2>
+    <p>
+      Siapa saja yang memiliki akun Google dapat memberi otorisasi kepada aplikasi klien pilihannya
+      untuk mencadangkan file ke akun Google Drive miliknya sendiri. Klien OAuth ini tidak terikat
+      pada satu aplikasi tertentu, sehingga dapat dipakai oleh aplikasi desktop, alat baris perintah,
+      maupun layanan lain yang mendukung OAuth 2.0.
+    </p>
+    <p>
+      Setiap pengguna memberi otorisasi pada akun Google miliknya melalui layar persetujuan OAuth,
+      dan dapat mencabut akses kapan saja di
+      <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
+      Tidak ada pendaftaran, langganan, atau akun tambahan.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Data dan privasi</h2>
+    <p>
+      Aplikasi klien hanya membaca dan menulis file yang dibuatnya di folder yang dipilih pengguna.
+      Aplikasi tidak membaca, mengumpulkan, atau mengirimkan konten Drive lain milik pengguna,
+      dan tidak mengirim data apa pun ke pihak ketiga. Karena berjalan sepenuhnya di perangkat
+      pengguna, pengembang tidak memiliki akses ke file cadangan maupun token pengguna.
+      Rincian lengkap, termasuk cakupan Google API yang dipakai dan cara menghapus data, ada di
+      <a href="./privacy.html">Kebijakan Privasi</a>.
+    </p>
+    <div class="note">
+      <p>
+        Penggunaan informasi yang diterima dari Google API oleh aplikasi ini tunduk pada
+        <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+        termasuk persyaratan Limited Use.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="app-layout">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="./privacy.html">Kebijakan Privasi</a></li>
+      <li><a href="./terms.html">Ketentuan Layanan</a></li>
+      <li><a href="mailto:arvib@fazriansyah.eu.org">Kontak</a></li>
+    </ul>
+    <p>
+      Tidak berafiliasi dengan, tidak didukung, dan tidak disponsori oleh Google LLC.
+      Google Drive adalah merek dagang Google LLC.
+    </p>
+  </div>
 </footer>
+
+<script src="./assets/theme.js" defer></script>
 </body>
 </html>
